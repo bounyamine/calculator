@@ -113,7 +113,7 @@ const App = () => {
         </div>
       </main>
       <footer>
-        <p>&copy; BOUNYAMINE OUSMANOU</p>
+        <p>&copy; 2024 by BOUNYAMINE OUSMANOU</p>
       </footer>
     </div>
   );
