@@ -38,10 +38,28 @@ const App = () => {
 
   const populateSign = () => {
     setScreen((prev) => {
-      if (prev === '0') return prev;
-      return prev.startsWith('-') ? prev.slice(1) : '-' + prev;
+      // Séparation en tokens pour gérer les différentes parties de l'expression
+      const tokens = prev.match(/([+\-*/()]|\d+(\.\d+)?)/g) || [];
+  
+      // Si aucun nombre, on retourne simplement l'expression précédente
+      if (!tokens.length) return prev;
+  
+      // On récupère le dernier token (nombre ou opérateur)
+      const lastToken = tokens.pop();
+  
+      // Si le dernier token est un nombre, on change son signe
+      if (!isNaN(lastToken)) {
+        const newToken = parseFloat(lastToken) > 0 ? '-' + lastToken : lastToken.slice(1);
+        tokens.push(newToken);
+      } else {
+        // Si ce n'est pas un nombre, on remet l'ancien token
+        tokens.push(lastToken);
+      }
+  
+      return tokens.join('');
     });
   };
+  
 
   const percentage = () => {
     const value = parseFloat(screen);
@@ -79,6 +97,23 @@ const App = () => {
     }
   };
 
+  const addParenthesis = () => {
+    setScreen((prev) => {
+      const openParentheses = (prev.match(/\(/g) || []).length;
+      const closeParentheses = (prev.match(/\)/g) || []).length;
+  
+      // Si le nombre de parenthèses ouvrantes est supérieur à celui des parenthèses fermantes,
+      // on ajoute une parenthèse fermante.
+      if (openParentheses > closeParentheses) {
+        return prev + ')';
+      } else {
+        // Sinon, on ajoute une parenthèse ouvrante.
+        return prev === '0' ? '(' : prev + '(';
+      }
+    });
+  };
+  
+
   return (
     <div className="container">
       <h2>Calculator</h2>
@@ -90,8 +125,8 @@ const App = () => {
           </div>
           <div className="keyboard">
             <div className="key" onClick={percentage}><span>%</span></div>
+            <div className="key" onClick={addParenthesis}><span>( )</span></div>
             <div className="key" onClick={deleteAll}><span>CE</span></div>
-            <div className="key" onClick={deleteAll}><span>C</span></div>
             <div className="key" onClick={deleteLast}><span>&larr;</span></div>
             <div className="key" onClick={inverse}><span>1/x</span></div>
             <div className="key" onClick={square}><span>x²</span></div>
