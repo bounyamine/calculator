@@ -6,7 +6,7 @@ Une calculatrice web simple et efficace développée avec React.js. Cette applic
 
 L'application **Calculator** affiche un écran numérique où les utilisateurs peuvent entrer des expressions mathématiques, et propose une interface utilisateur complète avec les boutons pour les opérations standards (addition, soustraction, multiplication, division) ainsi que des fonctionnalités avancées.
 
-![Calculator App Screenshot](https://your-screenshot-url.com)
+![Calculator App Screenshot](https://github.com/bounyamine/calculator/blob/main/public/screenshots/screen.png)
 
 ## 🚀 Fonctionnalités
 
@@ -28,8 +28,8 @@ L'application **Calculator** affiche un écran numérique où les utilisateurs p
 1. **Cloner le projet :**
 
    ```bash
-   git clone https://github.com/yourusername/calculator-app.git
-   cd calculator-app
+   git clone https://github.com/bounyamine/calculator.git
+   cd calculator
    ```
 
 2. **Installer les dépendances :**
@@ -61,9 +61,9 @@ L'application **Calculator** affiche un écran numérique où les utilisateurs p
   index.html              # Page HTML principale
 /src
   App.js                  # Composant principal de l'application
-  App.css                 # Style de l'application
+  App.css                 # Style de l'application principale
   index.js                # Point d'entrée de React
-  /utils                  # Utilitaires pour les fonctions mathématiques (optionnel)
+  index.css               # Style de tout les composants
 ```
 
 ## 🎥 Démo
