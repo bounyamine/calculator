@@ -1,0 +1,94 @@
+body {
+  background-color: #5c9af8;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2cde);
+  border: 1px solid #44444475;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #f0f0f0;
+}
+
+.container h2 {
+  margin: 0 0 1.5rem 0;
+}
+
+.main {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+.screen input {
+  width: 93%;
+  padding: 10px;
+  font-size: 2em;
+  text-align: right;
+  border: 2px solid #555;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+  background: #333;
+  color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  padding: 20px;
+  border: 1px solid #666;
+  font-size: 1.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s, transform 0.1s;
+  color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.key:hover {
+  background: #555555;
+  transform: scale(0.99);
+}
+
+.key:active {
+  background: #000000;
+  transform: scale(1);
+}
+
+.key.equal {
+  background: #ff9500;
+  color: #fff;
+  font-size: 2.4rem;
+  padding: 10px;
+}
+
+.key.equal:hover {
+  background: #e68a00;
+}
+
+footer p {
+  margin: 1.5rem 0 0 0;
+}
