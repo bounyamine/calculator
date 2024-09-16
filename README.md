@@ -16,6 +16,7 @@ L'application **Calculator** affiche un écran numérique où les utilisateurs p
 - Suppression d'une entrée avec le bouton CE et suppression du dernier caractère.
 - Transition fluide entre les opérations et boutons désactivés si nécessaire.
 - Fonctionnalités de changement de signe et de calcul des pourcentages.
+- Gestion des parenthèses : support pour les expressions avec parenthèses, avec une gestion automatique des parenthèses ouvrantes et fermantes.
   
 ## 🛠️ Technologies
 
