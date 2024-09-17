@@ -1,26 +1,29 @@
+/* Variables de couleur */
 :root {
-  /* Couleurs principales */
-  --bg-color-dark: #038850e3;
-  --bg-color: #f0f3f5;
-  --button-color: #d7dce6;
-  --text-color: #333;
-  --button-shadow: rgba(0, 0, 0, 0.1);
-  --button-shadow-pressed: rgba(0, 0, 0, 0.2);
-  --highlight-color: #ff9500;
-  --highlight-shadow: rgba(255, 149, 0, 0.5);
-  --shadow-color-light: rgba(255, 255, 255, 0.521);
-  --shadow-color-dark: rgba(0, 0, 0, 0.1);
-
-  /* Effets */
-  --border-radius: 20px;
-  --box-shadow: 10px 10px 20px var(--shadow-color-dark), -10px -10px 20px var(--shadow-color-light);
-  --pressed-shadow: inset 5px 5px 10px var(--shadow-color-dark), inset -5px -5px 10px var(--shadow-color-light);
+  --primary-color: #e0f7fa; /* Couleur pastel verte pour les touches */
+  --secondary-color: #ffccbc; /* Couleur pastel rose pour le bouton égal */
+  --background-color: #2575fc; /* Fond clair général */
+  --button-bg-color: #ffffff; /* Fond des boutons */
+  --button-hover-color: #eeeeee; /* Couleur au survol des boutons */
+  --text-color: #333; /* Couleur du texte */
+  --screen-bg-color: #333; /* Fond de l'écran de la calculatrice */
+  --screen-text-color: #00e676; /* Texte vert pour l'écran */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Ombre légère pour les boutons */
+  --highlight-color: #ff9500; /* Fond du bouton égal */
+  --link-text-color: #2575fc; /* Lien */
 }
 
-body {
-  background-color: var(--bg-color-dark);
+/* Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
+body {
   font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,66 +31,72 @@ body {
 }
 
 .container {
-  background-color: var(--bg-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 30px 10px;
-  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  max-width: 70%;
 }
 
 h2 {
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
   color: var(--text-color);
-}
-
-.main {
-  background-color: var(--bg-color);
-  padding: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
 }
 
 .screen input {
-  width: calc(100% - 30px);
-  padding: 15px;
-  font-size: 2.5rem;
-  text-align: right;
+  width: 100%;
+  background-color: var(--screen-bg-color);
   border: none;
-  border-radius: var(--border-radius);
-  box-shadow: inset 5px 5px 10px var(--button-shadow-pressed), inset -5px -5px 10px white;
-  background: var(--button-color);
-  color: var(--text-color);
-  margin-bottom: 20px;
+  color: var(--screen-text-color);
+  font-size: 2.5rem;
+  padding: 15px;
+  text-align: right;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
 }
 
 .keyboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .key {
-  padding: 20px;
-  font-size: 1.5rem;
-  border-radius: var(--border-radius);
-  background-color: var(--button-color);
+  background-color: var(--button-bg-color);
   color: var(--text-color);
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--box-shadow);
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px var(--shadow-color);
 }
 
 .key:hover {
-  box-shadow: 5px 5px 15px var(--button-shadow), -5px -5px 15px white;
+  background-color: var(--button-hover-color);
 }
 
 .key:active {
-  box-shadow: var(--pressed-shadow);
-  transform: scale(0.98);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles pour les boutons spécifiques */
 .key.equal {
   background-color: var(--highlight-color);
   color: white;
@@ -104,7 +113,22 @@ h2 {
   box-shadow: inset 5px 5px 15px rgba(255, 149, 0, 0.7), inset -5px -5px 15px rgba(255, 255, 255, 0.5);
 }
 
-footer p {
-  margin-top: 2rem;
+footer {
+  margin-top: 20px;
+  text-align: center;
   color: var(--text-color);
+}
+
+footer p {
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--link-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--button-hover-color);
 }

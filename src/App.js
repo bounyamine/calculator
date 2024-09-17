@@ -148,7 +148,7 @@ const App = () => {
         </div>
       </main>
       <footer>
-        <p>&copy; 2024 by BOUNYAMINE OUSMANOU</p>
+        <p>&copy; Calculator par <a href="https://github.com/bounyamine">Bounyamine</a></p>
       </footer>
     </div>
   );
