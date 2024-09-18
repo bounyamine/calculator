@@ -1,9 +1,12 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import './App.css';
 import { evaluate } from 'mathjs';
 
 const App = () => {
   const [screen, setScreen] = useState('0');
+  console.log(React);
+  
 
   useEffect(() => {
     const value = parseFloat(screen);
@@ -49,7 +52,7 @@ const App = () => {
   
       // Si le dernier token est un nombre, on change son signe
       if (!isNaN(lastToken)) {
-        const newToken = parseFloat(lastToken) > 0 ? '-' + lastToken : lastToken.slice(1);
+        const newToken = parseFloat(lastToken) > 0 ? '(-' + lastToken + ')' : lastToken.slice(1);
         tokens.push(newToken);
       } else {
         // Si ce n'est pas un nombre, on remet l'ancien token
@@ -60,7 +63,6 @@ const App = () => {
     });
   };
   
-
   const percentage = () => {
     const value = parseFloat(screen);
     if (!isNaN(value)) {

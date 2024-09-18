@@ -31,7 +31,7 @@ body {
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: var(--button-bg-color);
   padding: 20px;
   border-radius: 25px;
   box-shadow: 0 10px 20px var(--shadow-color);
